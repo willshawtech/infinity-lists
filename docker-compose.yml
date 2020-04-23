@@ -1,9 +1,9 @@
 version: "3.7"
 services:
-    
-    mysql:
-        image: mysql:8.0
-        container_name: infinity-lists-mysql
+
+    rdb:
+        image: mariadb:latest
+        container_name: infinity-lists-rdb
         working_dir: /application
         volumes:
           - .:/application
@@ -14,7 +14,7 @@ services:
           - MYSQL_PASSWORD=dbpw
         ports:
           - "8002:3306"
-  
+
     webserver:
         image: nginx:alpine
         container_name: infinity-lists-webserver
@@ -24,7 +24,7 @@ services:
             - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         ports:
          - "8000:80"
-  
+
     php-fpm:
         build: docker/php-fpm
         container_name: infinity-lists-php-fpm
