@@ -10,7 +10,7 @@ script:
   - docker run -e CI=true nickwshaw/infinity-lists-app ./bin/phpspec run
 
 after_success:
-  - docker build -t nickwshaw/infinity-lists-nginx ./nginx
+  - docker build -t nickwshaw/infinity-lists-nginx ./docker/nginx
   # Log into Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take images and push them to docker hub
