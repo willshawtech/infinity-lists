@@ -1,0 +1,4 @@
+suites:
+  infinity_lists_suite:
+    namespace: Willshaw\InfinityLists
+    psr4_prefix: Willshaw\InfinityLists
