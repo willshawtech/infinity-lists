@@ -10,7 +10,7 @@ script:
   - docker run -e CI=true nickwshaw/infinity-lists-app ./bin/phpspec run
 
 after_success:
-  - docker build -t nickwshaw/infinity-lists-nginx ./nginx
+  - docker build -t nickwshaw/infinity-lists-nginx ./docker/nginx
   # Log into Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take images and push them to docker hub
@@ -21,10 +21,11 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "infinity-lists"
-  env: "InfinityLists-env"
+  env: "InfinityLists-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-107716788880"
   bucket_path: "infinity-lists"
   on:
     branch: master
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
+
