@@ -13,7 +13,16 @@
 	  "image": "nickwshaw/infinity-lists-nginx",
 	  "hostname": "webserver",
 	  "essential": true,
-	  "memory": 128
+	  "memory": 128,
+	  "portMappings": [
+		{
+		  "hostPort": 80,
+		  "containerPort": 80
+		}
+	  ],
+	  "links": [
+		"php-fpm"
+	  ]
 	}
   ]
 }
