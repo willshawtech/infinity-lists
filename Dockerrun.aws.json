@@ -2,16 +2,16 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
 	{
-	  "name": "webserver",
-	  "image": "nickwshaw/infinity-lists-nginx",
-	  "hostname": "webserver",
+	  "name": "php-fpm",
+	  "image": "nickwshaw/infinity-lists-app",
+	  "hostname": "php-fpm",
 	  "essential": true,
 	  "memory": 128
 	},
 	{
-	  "name": "php-fpm",
-	  "image": "nickwshaw/infinity-lists-app",
-	  "hostname": "php-fpm",
+	  "name": "webserver",
+	  "image": "nickwshaw/infinity-lists-nginx",
+	  "hostname": "webserver",
 	  "essential": true,
 	  "memory": 128
 	}
