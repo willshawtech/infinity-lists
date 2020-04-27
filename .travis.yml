@@ -21,7 +21,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "infinity-lists"
-  env: "InfinityLists-env-1"
+  env: "InfinityLists-env"
   bucket_name: "elasticbeanstalk-us-east-2-107716788880"
   bucket_path: "infinity-lists"
   on:
