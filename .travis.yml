@@ -10,6 +10,7 @@ script:
   - docker run -e CI=true nickwshaw/infinity-lists-app ./bin/phpspec run
 
 after_success:
+  - composer install --no-dev --prefer-source --no-interaction
   - docker build -t nickwshaw/infinity-lists-nginx ./docker/nginx
   # Log into Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
