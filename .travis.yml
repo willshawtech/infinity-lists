@@ -7,7 +7,8 @@ before_install:
   - docker build -t nickwshaw/infinity-lists-app .
 
 script:
-  - docker run -e CI=true nickwshaw/infinity-lists-app -c "composer install --prefer-source --no-interaction && ./bin/phpspec run"
+  # Install dev dependencies and run tests
+  - docker run -e CI=true nickwshaw/infinity-lists-app /bin/bash -c "composer install --prefer-source --no-interaction && ./bin/phpspec run"
 
 after_success:
   - docker build -t nickwshaw/infinity-lists-nginx ./docker/nginx
