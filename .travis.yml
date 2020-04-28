@@ -4,6 +4,7 @@ services:
   - docker
 
 before_install:
+  - composer install --prefer-source --no-interaction
   - docker build -t nickwshaw/infinity-lists-app .
 
 script:
