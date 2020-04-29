@@ -7,9 +7,7 @@ RUN apt-get install --no-install-recommends -y wget vim git zip unzip
 # PHP extensions
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo_mysql
-# Install and enable xDebug
-RUN pecl install xdebug \
-	docker-php-ext-enable xdebug
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
