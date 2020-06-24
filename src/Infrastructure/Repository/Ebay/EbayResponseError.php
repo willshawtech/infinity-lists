@@ -4,7 +4,7 @@ namespace Willshaw\InfinityLists\Infrastructure\Repository\Ebay;
 
 use DTS\eBaySDK\Trading\Types\ErrorType;
 
-class EbayError
+class EbayResponseError
 {
     /**
      * @var ErrorType
@@ -20,10 +20,10 @@ class EbayError
     }
 
     /**
-     * @return ErrorType
+     * @return string
      */
-    public function getError(): ErrorType
+    public function getErrorMessage(): string
     {
-        return $this->error;
+        return $this->error->ShortMessage;
     }
 }

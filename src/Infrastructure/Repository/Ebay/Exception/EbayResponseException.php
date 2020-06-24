@@ -2,7 +2,7 @@
 
 namespace Willshaw\InfinityLists\Infrastructure\Repository\Ebay\Exception;
 
-class EbayEmptyResponseException extends \RuntimeException
+class EbayResponseException extends \RuntimeException
 {
 
 }
