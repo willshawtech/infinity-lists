@@ -1,13 +1,11 @@
 <?php
 
-namespace Willshaw\InfinityLists\Infrastructure\Service;
-
-use Willshaw\InfinityLists\Infrastructure\Repository\Ebay\EbayResponseInterface;
+namespace Willshaw\InfinityLists\Infrastructure\Repository;
 
 interface EbayServiceInterface
 {
     /**
-     * @return EbayResponseInterface
+     * @return EbaySellerResponseInterface[]
      */
-    public function getSellerItems() : EbayResponseInterface;
+    public function getSellerItems() : array;
 }

@@ -2,9 +2,7 @@
 
 namespace Willshaw\InfinityLists\Infrastructure\Repository;
 
-use Psr\Http\Message\ResponseInterface;
-use Willshaw\InfinityLists\Infrastructure\Repository\Ebay\Exception\EbayEmptyResponseException;
-use Willshaw\InfinityLists\Infrastructure\Repository\Ebay\Exception\EbayResponseErrorException;
+use Willshaw\InfinityLists\Infrastructure\Repository\Ebay\EbayResponseErrorCollection;
 
 interface EbaySellerResponseInterface
 {
@@ -14,11 +12,9 @@ interface EbaySellerResponseInterface
     public function getItems() : array;
 
     /**
-     * @throws EbayResponseErrorException
-     * @throws EbayEmptyResponseException
-     * @return bool
+     * @return EbayResponseErrorCollection
      */
-    public function checkError() : bool;
+    public function getErrors() : EbayResponseErrorCollection;
 
     /**
      * @return int
