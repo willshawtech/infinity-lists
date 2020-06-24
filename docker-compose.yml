@@ -30,7 +30,11 @@ services:
           dockerfile: docker/php-fpm/Dockerfile.dev
           context: .
         container_name: infinity-lists-php-fpm
+        environment:
+          - PHP_IDE_CONFIG=serverName=docker
         working_dir: /application
         volumes:
           - .:/application
           - ./docker/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini
+          - /Users/nicks/.aws/credentials-infinity:/root/.aws/credentials:ro
+          - /Users/nicks/.ebay_sdk/credentials:/root/.ebay_sdk/credentials:ro
